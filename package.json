@@ -1,0 +1,29 @@
+{
+  "name": "fraudio",
+  "version": "1.0.0",
+  "description": "Simple audio player",
+  "main": "src/fraudio.js",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sass": "^4.0.2",
+    "gulp-util": "^3.0.8",
+    "merge-stream": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm i & gulp",
+    "watch": "npm i & gulp watch"
+  },
+  "keywords": [
+    "music",
+    "audio",
+    "player",
+    "mp3"
+  ],
+  "author": "Frederick Ouellette",
+  "license": "ISC"
+}

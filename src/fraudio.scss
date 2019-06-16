@@ -1,0 +1,65 @@
+@import "variables";
+
+.fraudio-container {
+	width: 100%;
+	margin: 15px 0 15px 0;
+	position: relative;
+	font-size: 18px;
+	background-color: $fraudio-background-color;
+	z-index: 0;
+	display: flex;
+	
+	.fraudio-play-container {
+		font-size: 22px;
+		min-width: 50px;
+		// display: inline-block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: middle;
+		height: 100%;
+	}
+	
+	.fraudio-play {
+		cursor: pointer;
+		z-index: 10;
+	}
+	
+	.fraudio-progress {
+		position: absolute;
+		bottom: 0;
+		border-right: 1px solid $fraudio-progress-line-color;
+		background-color: $fraudio-progress-color;
+		height: 100%;
+		z-index: -1;
+	}
+	
+	.fraudio-text {
+		z-index: 2;
+		// display: inline-block;
+		font-size: 14px;
+		padding: 7px 10px 7px 0;
+		
+		/* Make this text unselectable */
+		-webkit-user-select: none; /* Safari */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+	}
+	
+	.fraudio-title {
+		color: $fraudio-title-color;
+	}
+	
+	.fraudio-artist {
+		color: $fraudio-artist-color;
+	}
+	
+	.fraudio-progress-click {
+		z-index: 5;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+	}
+}
