@@ -1,7 +1,7 @@
 # fraudio
 jQuery Audio Player - simple styling and simple to use
 
-![fraudio player](./fraudio.png)
+![fraudio player](fraudio.png)
 
 ## Installation (npm)
 * `npm i fraudio`
@@ -28,3 +28,7 @@ jQuery Audio Player - simple styling and simple to use
 
 ## Problems? 
 I encourage all issues to be submitted through the [**Issues** tab on GitHub](https://github.com/freddyouellette/fraudio/issues).
+
+## Links
+* [github repository](https://github.com/freddyouellette/fraudio)
+* [npm package](https://www.npmjs.com/package/fraudio)
