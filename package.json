@@ -18,8 +18,8 @@
 	},
 	"devDependencies": {},
 	"scripts": {
-		"build": "npm i & gulp",
-		"watch": "npm i & gulp watch"
+		"build": "npm i && gulp",
+		"watch": "npm i && gulp watch"
 	},
 	"keywords": [
 		"music",
