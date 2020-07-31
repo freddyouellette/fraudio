@@ -4,9 +4,6 @@
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
 	"dependencies": {
-		"lodash": ">=4.17.13",
-		"lodash.template": ">=4.5.0",
-		"lodash.mergewith": ">=4.6.2",
 		"gulp": "^4.0.2",
 		"gulp-clean-css": "^4.2.0",
 		"gulp-concat": "^2.6.1",
@@ -14,6 +11,9 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
 		"gulp-util": "^3.0.8",
+		"lodash": "^4.17.19",
+		"lodash.mergewith": ">=4.6.2",
+		"lodash.template": ">=4.5.0",
 		"merge-stream": "^1.0.1"
 	},
 	"devDependencies": {},
