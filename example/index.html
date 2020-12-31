@@ -10,19 +10,23 @@
 <audio
 	class="fraudio"
 	src="./hannelore.mp3"
-	data-title="Song 2 (auto-loaded fraudio)"
-	data-artist="Artist"
+	data-title="Song 2 (without artist)"
+></audio>
+<audio
+	class="fraudio"
+	src="./hannelore.mp3"
+	data-artist="Song 3 (without title)"
 ></audio>
 <audio
 	class="manual-fraudio"
 	src="./hannelore.mp3"
-	data-title="Song 3 (manually-loaded fraudio)"
+	data-title="Song 4 (manually-loaded fraudio)"
 	data-artist="Artist"
 ></audio>
 <audio
 	class="fraudio changes"
 	src="./hannelore.mp3"
-	data-title="Song 4 (manually-loaded fraudio)"
+	data-title="Song 5 (manually-loaded fraudio)"
 	data-artist="Artist"
 ></audio>
 <script>
@@ -30,7 +34,7 @@
 	$('.manual-fraudio').fraudio();
 	
 	// rerunning fraudio will simply refresh it
-	$('.changes').attr('data-title', 'Song 5 (changed via script)');
+	$('.changes').attr('data-title', 'Song 6 (changed via script)');
 	$('.changes').attr('data-artist', 'Different Artist');
 	$('.changes').fraudio();
 </script>
