@@ -1,0 +1,36 @@
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../dist/fraudio.min.js"></script>
+<link rel="stylesheet" href="../dist/fraudio.min.css">
+<audio
+	class="fraudio"
+	src="./hannelore.mp3"
+	data-title="Song 1 (auto-loaded fraudio)"
+	data-artist="Artist"
+></audio>
+<audio
+	class="fraudio"
+	src="./hannelore.mp3"
+	data-title="Song 2 (auto-loaded fraudio)"
+	data-artist="Artist"
+></audio>
+<audio
+	class="manual-fraudio"
+	src="./hannelore.mp3"
+	data-title="Song 3 (manually-loaded fraudio)"
+	data-artist="Artist"
+></audio>
+<audio
+	class="fraudio changes"
+	src="./hannelore.mp3"
+	data-title="Song 4 (manually-loaded fraudio)"
+	data-artist="Artist"
+></audio>
+<script>
+	// manually change an audio element into fraudio via code instead of .fraudio class
+	$('.manual-fraudio').fraudio();
+	
+	// rerunning fraudio will simply refresh it
+	$('.changes').attr('data-title', 'Song 5 (changed via script)');
+	$('.changes').attr('data-artist', 'Different Artist');
+	$('.changes').fraudio();
+</script>

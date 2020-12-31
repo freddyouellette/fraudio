@@ -18,7 +18,7 @@ gulp.task('bundle-js', done => {
 		.pipe(uglify())
 		.pipe(concat('fraudio.min.js'))
 		.pipe(sourceMaps.write('.'))
-		.pipe(gulp.dest('./build'));
+		.pipe(gulp.dest('./dist'));
 	done();
 });
 
@@ -31,7 +31,7 @@ gulp.task('bundle-css', done => {
 		.pipe(cleanCss())
 		.pipe(concat('fraudio.min.css'))
 		.pipe(sourceMaps.write('.'))
-		.pipe(gulp.dest('./build'));
+		.pipe(gulp.dest('./dist'));
 	done();
 });
 

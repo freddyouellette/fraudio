@@ -56,8 +56,10 @@
 	
 	$.fn.fraudio = function() {
 		this.filter('audio').each(function() {
+			
+			// create the player from the fraudio template
 			$fraudio = $(player);
-			$fraudio.find('audio').replaceWith($(this).clone());
+			$fraudio.find('audio').replaceWith($(this).clone().addClass('fraudio-initialized'));
 			$fraudio.find('.fraudio-title').html($(this).attr('data-title'));
 			$fraudio.find('.fraudio-artist').html($(this).attr('data-artist'));
 			
@@ -66,46 +68,53 @@
 				$fraudio.find('.fraudio-play').html(pause_icon);
 			}
 			
-			$(this).replaceWith($fraudio);
-		});
-		
-		
-		$('.fraudio-play').click(function() {
-			toggleAudio($(this).closest('.fraudio-container').find('audio')[0]);
-		});
-		
-		$('.fraudio').on('timeupdate', function() {
-			if(!audio_scrubbing) {
-				var progress = $(this).siblings('.fraudio-progress')[0];
-				$(progress).css('width', this.currentTime / this.duration * 100 + '%')
-			}
-		});
-		
-		$('audio').on('ended', function() {
-			$(this).parent().find('.fraudio-play').html(play_icon);
-		});
-		
-		$('.fraudio-progress-click').on('mousedown', function() {
-			var audio = $(this).siblings('audio')[0];
-			if(!$(audio).data('played_already')) {
-				toggleAudio(audio);
+			// attach events
+			$fraudio.find('.fraudio-play').click(function() {
+				toggleAudio($(this).closest('.fraudio-container').find('audio')[0]);
+			});
+			
+			$fraudio.find('audio').on('timeupdate', function() {
+				if(!audio_scrubbing) {
+					var progress = $(this).siblings('.fraudio-progress')[0];
+					$(progress).css('width', this.currentTime / this.duration * 100 + '%')
+				}
+			});
+			
+			$fraudio.find('audio').on('ended', function() {
+				$(this).parent().find('.fraudio-play').html(play_icon);
+			});
+			
+			$fraudio.find('.fraudio-progress-click').on('mousedown', function() {
+				var audio = $(this).siblings('audio')[0];
+				if(!$(audio).data('played_already')) {
+					toggleAudio(audio);
+				} else {
+					audio_scrubbing = $(this);
+				}
+			});
+			
+			// replace audio with the new player
+			if($(this).parent().hasClass('fraudio-container')) {
+				// already initialized
+				$(this).parent().replaceWith($fraudio);
 			} else {
-				audio_scrubbing = $(this);
-			}
-		});
-		
-		$(document).on('mousemove', calculateScrub);
-		$(document).on('mouseup mouseleave', function(event) {
-			if(audio_scrubbing) {
-				calculateScrub(event);
-				// they clicked on an audio scrubber, now they're releasing the click
-				// when the mouse comes up, set the audio offset
-				var audio = audio_scrubbing.siblings('audio')[0];
-				audio.currentTime = event.offsetX / audio_scrubbing.width() * audio.duration;
-				audio_scrubbing = false;
+				$(this).replaceWith($fraudio);
 			}
 		});
 	}
+	
+	// attach events for tracking scrubbing
+	$(document).on('mousemove', calculateScrub);
+	$(document).on('mouseup mouseleave', function(event) {
+		if(audio_scrubbing) {
+			calculateScrub(event);
+			// they clicked on an audio scrubber, now they're releasing the click
+			// when the mouse comes up, set the audio offset
+			var audio = audio_scrubbing.siblings('audio')[0];
+			audio.currentTime = event.offsetX / audio_scrubbing.width() * audio.duration;
+			audio_scrubbing = false;
+		}
+	});
 	
 	$(function() {
 		$('.fraudio').fraudio();

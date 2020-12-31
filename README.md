@@ -20,6 +20,8 @@ jQuery Audio Player - simple styling and simple to use
 	></audio>
 ```
 
+* You can also turn any audio element into a fraudio element with `$(element).fraudio();`
+
 ## Build procedure
 `npm run build`
 
