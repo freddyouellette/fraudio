@@ -1,6 +1,6 @@
 {
 	"name": "fraudio",
-	"version": "2.0.1",
+	"version": "2.0.3",
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
 	"dependencies": {
