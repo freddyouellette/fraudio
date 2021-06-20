@@ -3,21 +3,6 @@
 	"version": "2.0.4",
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
-	"dependencies": {
-		"gulp": "^4.0.2",
-		"gulp-clean-css": "^4.2.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-sass": "^4.0.2",
-		"gulp-sourcemaps": "^2.6.5",
-		"gulp-uglify": "^3.0.2",
-		"gulp-util": "^3.0.8",
-		"jquery": "^3.5.1",
-		"lodash": "^4.17.19",
-		"lodash.mergewith": ">=4.6.2",
-		"lodash.template": ">=4.5.0",
-		"merge-stream": "^1.0.1"
-	},
-	"devDependencies": {},
 	"scripts": {
 		"build": "npm i && gulp",
 		"watch": "npm i && gulp watch"
@@ -29,5 +14,14 @@
 		"mp3"
 	],
 	"author": "Frederick Ouellette",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"jquery": "^3.6.0"
+	}
 }
