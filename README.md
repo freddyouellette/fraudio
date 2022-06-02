@@ -34,3 +34,4 @@ I encourage all issues to be submitted through the [**Issues** tab on GitHub](ht
 ## Links
 * [github repository](https://github.com/freddyouellette/fraudio)
 * [npm package](https://www.npmjs.com/package/fraudio)
+* [MIT License](https://github.com/freddyouellette/fraudio/blob/master/LICENSE.md)
