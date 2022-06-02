@@ -1,6 +1,6 @@
 {
 	"name": "fraudio",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
 	"scripts": {
@@ -15,10 +15,6 @@
 	],
 	"author": "Frederick Ouellette",
 	"license": "ISC",
-	"engines": {
-		"node": "16.15.x",
-		"npm": "8.11.x"
-	},
 	"dependencies": {
 		"gulp": "^4.0.2",
 		"gulp-clean-css": "^4.3.0",
