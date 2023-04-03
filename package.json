@@ -1,6 +1,6 @@
 {
 	"name": "fraudio",
-	"version": "2.3.1",
+	"version": "2.3.2",
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
 	"scripts": {
@@ -23,10 +23,9 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"jquery": "^3.6.0",
-		"node-sass": "^7.0.1"
+		"sass": "^1.60.0"
 	},
 	"overrides": {
-		"glob-parent": "5.1.x",
-		"scss-tokenizer": ">=0.4.3"
+		"glob-parent": "5.1.x"
 	}
 }
