@@ -18,6 +18,10 @@ jQuery Audio Player - simple styling and simple to use
 ```
 
 * You can also turn any audio element into a fraudio element with `$(element).fraudio();`
+* To turn on sequential autoplay, so that each audio will automatically play one after another, change the `sequential_autoplay` setting:
+```
+$.fn.fraudio.sequential_autoplay = true;
+```
 
 ## Extending & Debugging
 * Download the code with `git clone https://github.com/freddyouellette/fraudio`

@@ -37,6 +37,9 @@
 	autoplay
 ></audio>
 <script>
+	// set this to true to automatically play each audio in sequence
+	$.fn.fraudio.sequential_autoplay = false;
+	
 	// manually change an audio element into fraudio via code instead of .fraudio class
 	$('.manual-fraudio').fraudio();
 	

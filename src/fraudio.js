@@ -56,10 +56,9 @@
 	
 	$.fn.fraudio = function() {
 		this.filter('audio').each(function() {
-			
 			// create the player from the fraudio template
 			$fraudio = $(player);
-			$fraudio.find('audio').replaceWith($(this).clone().addClass('fraudio-initialized'));
+			$fraudio.find('audio').replaceWith($(this).clone().addClass('fraudio fraudio-initialized'));
 			$fraudio.find('.fraudio-title').html($(this).attr('data-title'));
 			$fraudio.find('.fraudio-artist').html($(this).attr('data-artist'));
 			
@@ -82,6 +81,13 @@
 			
 			$fraudio.find('audio').on('ended', function() {
 				$(this).parent().find('.fraudio-play').html(play_icon);
+				if($.fn.fraudio.sequential_autoplay) {
+					// autoplay the next audio
+					var $nextAudio = $(".fraudio").eq($(".fraudio").index($(this)) + 1);
+					if($nextAudio.length) {
+						toggleAudio($nextAudio[0]);
+					}
+				}
 			});
 			
 			$fraudio.find('.fraudio-progress-click').on('mousedown', function() {
@@ -119,5 +125,10 @@
 	$(function() {
 		$('.fraudio').fraudio();
 	});
+	
+	$.fn.fraudio.defaults = {
+		// if true, after each audio finishes, the next .fraudio will start playing automatically
+		sequential_autoplay: false
+	};
 	
 })(jQuery);
