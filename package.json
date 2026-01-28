@@ -1,6 +1,6 @@
 {
 	"name": "fraudio",
-	"version": "2.4.0",
+	"version": "2.4.1",
 	"description": "Simple audio player",
 	"main": "src/fraudio.js",
 	"scripts": {
@@ -26,6 +26,11 @@
 		"sass": "^1.60.0"
 	},
 	"overrides": {
-		"glob-parent": "5.1.x"
+		"glob-parent": "5.1.x",
+		"semver": "5.7.2",
+		"postcss": "8.4.31",
+		"es5-ext": "0.10.63",
+		"braces": "3.0.3",
+		"micromatch": "4.0.8"
 	}
 }
